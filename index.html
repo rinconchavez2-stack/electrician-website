@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>PEK Electric | Electrical Contractor</title>
 
   <style>
@@ -12,83 +13,136 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #0f1115;
-      color: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0d0f12;
+      color: #ffffff;
       line-height: 1.6;
     }
 
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13, 15, 18, 0.96);
+      border-bottom: 1px solid #292d33;
+    }
+
+    nav {
+      max-width: 1150px;
+      margin: auto;
+      min-height: 72px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #f6c33b;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #f6c33b;
+    }
+
     .hero {
-      min-height: 100vh;
+      min-height: calc(100vh - 72px);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
       background:
-        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.82)),
-        linear-gradient(135deg, #1a1d24, #0f1115);
+        radial-gradient(circle at top, #1d222a 0%, #0d0f12 55%);
     }
 
     .hero-content {
-      max-width: 850px;
+      max-width: 900px;
     }
 
     .badge {
       display: inline-block;
-      background: #f5c542;
-      color: #111;
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-weight: bold;
-      margin-bottom: 24px;
+      background: #f6c33b;
+      color: #111111;
+      padding: 9px 18px;
+      border-radius: 50px;
+      font-weight: 800;
+      margin-bottom: 25px;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      line-height: 1.05;
-      margin-bottom: 20px;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      color: #cfcfcf;
-      margin-bottom: 30px;
+      max-width: 760px;
+      margin: 0 auto 32px;
+      color: #c7cbd1;
+      font-size: 1.15rem;
     }
 
     .buttons {
       display: flex;
-      gap: 14px;
       justify-content: center;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      text-decoration: none;
-      padding: 14px 24px;
+      padding: 14px 25px;
       border-radius: 8px;
-      font-weight: bold;
-      transition: .2s ease;
-    }
-
-    .btn-primary {
-      background: #f5c542;
-      color: #111;
-    }
-
-    .btn-secondary {
-      border: 1px solid #666;
-      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.2s;
     }
 
     .btn:hover {
       transform: translateY(-2px);
     }
 
+    .btn-primary {
+      background: #f6c33b;
+      color: #111111;
+    }
+
+    .btn-secondary {
+      color: #ffffff;
+      border: 1px solid #656b74;
+    }
+
+    section {
+      scroll-margin-top: 72px;
+    }
+
     .section {
-      padding: 80px 20px;
+      padding: 90px 20px;
     }
 
     .container {
@@ -96,130 +150,319 @@
       margin: auto;
     }
 
-    .section h2 {
+    .section-title {
       text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #aeb3ba;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 20px;
     }
 
     .card {
-      background: #181b21;
-      border: 1px solid #2a2e36;
-      padding: 28px;
+      background: #171a1f;
+      border: 1px solid #292d33;
+      padding: 30px;
       border-radius: 12px;
     }
 
+    .card .icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
     .card h3 {
+      color: #f6c33b;
       margin-bottom: 10px;
-      color: #f5c542;
+    }
+
+    .card p {
+      color: #b9bdc3;
     }
 
     .about {
       background: #15181d;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: auto;
       text-align: center;
     }
 
-    .about p {
-      max-width: 750px;
-      margin: auto;
-      color: #c8c8c8;
+    .about-content h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: #bec2c8;
       font-size: 1.05rem;
     }
 
-    .contact {
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
       text-align: center;
+    }
+
+    .why-item {
+      padding: 25px;
+    }
+
+    .why-item strong {
+      display: block;
+      color: #f6c33b;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .why-item p {
+      color: #b9bdc3;
+    }
+
+    .contact {
+      background: #f6c33b;
+      color: #111111;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
     }
 
     .contact p {
-      color: #c8c8c8;
-      margin-bottom: 24px;
+      margin-bottom: 25px;
+      font-size: 1.05rem;
+    }
+
+    .contact .btn {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .phone {
+      display: block;
+      margin-top: 18px;
+      font-size: 1.15rem;
+      font-weight: bold;
     }
 
     footer {
+      padding: 30px 20px;
       text-align: center;
-      padding: 25px 20px;
-      border-top: 1px solid #2a2e36;
-      color: #888;
-      font-size: .9rem;
+      color: #858a91;
+      border-top: 1px solid #292d33;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px;
+        gap: 8px;
+      }
+
+      nav ul {
+        gap: 16px;
+        font-size: 0.9rem;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      .section {
+        padding: 65px 18px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <header>
+    <nav>
+      <div class="logo">
+        <span>⚡</span> PEK ELECTRIC
+      </div>
+
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <section class="hero">
     <div class="hero-content">
-      <div class="badge">Licensed • Bonded • Insured</div>
+
+      <div class="badge">
+        Licensed • Bonded • Insured
+      </div>
 
       <h1>PEK ELECTRIC</h1>
 
       <p>
-        Reliable residential electrical work, troubleshooting,
-        repairs, lighting, outlets, switches, circuits and more.
+        Professional residential electrical services with reliable
+        workmanship, clear communication and attention to safety.
       </p>
 
       <div class="buttons">
-        <a href="#contact" class="btn btn-primary">Request an Estimate</a>
-        <a href="tel:0000000000" class="btn btn-secondary">Call Now</a>
+
+        <a href="#contact" class="btn btn-primary">
+          Request an Estimate
+        </a>
+
+        <a href="tel:4152403221" class="btn btn-secondary">
+          Call (415) 240-3221
+        </a>
+
       </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Electrical Services</h2>
+        <p>Professional electrical work for your home.</p>
+      </div>
+
+      <div class="services">
+
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>Troubleshooting</h3>
+          <p>
+            Electrical diagnostics, repairs and solutions
+            for electrical problems.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔌</div>
+          <h3>Outlets & Switches</h3>
+          <p>
+            New outlets, switches, replacements and electrical upgrades.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💡</div>
+          <h3>Lighting</h3>
+          <p>
+            Recessed lighting, indoor lighting and outdoor installations.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔧</div>
+          <h3>New Circuits</h3>
+          <p>
+            Dedicated circuits and electrical additions for your home.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container about-content">
+
+      <h2>Quality Electrical Work</h2>
+
+      <p>
+        PEK Electric provides dependable residential electrical services
+        with a focus on quality workmanship, safety and straightforward
+        communication from start to finish.
+      </p>
+
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2>Electrical Services</h2>
 
-      <div class="services">
-        <div class="card">
-          <h3>Troubleshooting</h3>
-          <p>Electrical diagnostics, repairs and problem solving.</p>
-        </div>
-
-        <div class="card">
-          <h3>Outlets & Switches</h3>
-          <p>New installations, replacements and upgrades.</p>
-        </div>
-
-        <div class="card">
-          <h3>Lighting</h3>
-          <p>Indoor, outdoor and recessed lighting installations.</p>
-        </div>
-
-        <div class="card">
-          <h3>New Circuits</h3>
-          <p>Dedicated circuits and electrical additions for your home.</p>
-        </div>
+      <div class="section-title">
+        <h2>Why Choose PEK Electric?</h2>
       </div>
-    </div>
-  </section>
 
-  <section class="section about">
-    <div class="container">
-      <h2>Reliable Electrical Work</h2>
-      <p>
-        Quality workmanship, clear communication and dependable service.
-        Every job is handled with safety and professionalism in mind.
-      </p>
+      <div class="why-grid">
+
+        <div class="why-item">
+          <strong>Licensed, Bonded & Insured</strong>
+          <p>
+            Professional electrical service with safety
+            and quality in mind.
+          </p>
+        </div>
+
+        <div class="why-item">
+          <strong>Quality Workmanship</strong>
+          <p>
+            Attention to detail on every electrical project.
+          </p>
+        </div>
+
+        <div class="why-item">
+          <strong>Clear Communication</strong>
+          <p>
+            Straightforward communication from start to finish.
+          </p>
+        </div>
+
+        <div class="why-item">
+          <strong>Local Service</strong>
+          <p>
+            Proudly serving San Francisco and the Bay Area.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <section class="section contact" id="contact">
     <div class="container">
-      <h2>Need Electrical Work?</h2>
-      <p>Get in touch today to discuss your project or request an estimate.</p>
 
-      <a href="tel:0000000000" class="btn btn-primary">Call for an Estimate</a>
+      <h2>Need an Electrician?</h2>
+
+      <p>
+        Contact PEK Electric to discuss your electrical project
+        or request an estimate.
+      </p>
+
+      <a href="tel:4152403221" class="btn">
+        Call (415) 240-3221
+      </a>
+
+      <span class="phone">
+        PEK Electric • San Francisco Bay Area
+      </span>
+
     </div>
   </section>
 
   <footer>
-    © 2026 Professional Electrical Services
+    © 2026 PEK Electric • San Francisco Bay Area
   </footer>
 
 </body>
